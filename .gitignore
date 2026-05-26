@@ -1,0 +1,41 @@
+# Maxfiy fayllar — GitHub ga yuklanmaydi
+.env
+*.session
+*.session-journal
+
+# Ma'lumotlar bazasi — Railway da alohida saqlanadi
+*.db
+*.db-shm
+*.db-wal
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual muhit
+venv/
+env/
+.venv/
+ENV/
+
+# Log fayllar
+*.log
+
+# Excel fayllar (katta hajmli)
+ombor.xlsx
+
+# OS fayllar
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Concept fayllar
+unzipped_concept/
