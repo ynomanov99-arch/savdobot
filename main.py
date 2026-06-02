@@ -10,10 +10,12 @@ Ishga tushirish: python main.py
 
 import asyncio
 import logging
+import os
 import sys
 
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
+from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 
@@ -40,9 +42,17 @@ async def main():
         logger.error("BOT_TOKEN sozlanmagan! .env faylni tekshiring.")
         sys.exit(1)
 
+    # PythonAnywhere proksi sozlash (bepul rejada kerak)
+    session = None
+    if "PYTHONANYWHERE_DOMAIN" in os.environ or os.path.exists("/home/ynomanov"):
+        proxy_url = "http://proxy.server:3128"
+        session = AiohttpSession(proxy=proxy_url)
+        logger.info(f"PythonAnywhere aniqlandi, proksi ishlatilmoqda: {proxy_url}")
+
     # Bot va Dispatcher yaratish
     bot = Bot(
         token=BOT_TOKEN,
+        session=session,
         default=DefaultBotProperties(parse_mode=ParseMode.HTML)
     )
     dp = Dispatcher(storage=MemoryStorage())
