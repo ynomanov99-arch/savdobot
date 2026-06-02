@@ -100,7 +100,5 @@ COSTUME_INFO_TEMPLATE = """
 💧 <b>Drop:</b> <code>{drop}</code>
 📏 <b>Razmer:</b> <code>{sizes}</code>
 👔 <b>Turi:</b> <b>{suit_type}</b>
-📦 <b>Soni:</b> <code>{stock_qty}</code>
-📍 <b>Qator:</b> <code>{warehouse_location}</code>
 ──────────────────────────
 """

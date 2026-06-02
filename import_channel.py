@@ -66,6 +66,11 @@ async def main():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
+    # Eski ma'lumotlarni o'chirish (tozalash)
+    print("🧹 Eski kostyumlar bazadan o'chirilmoqda, kanaldagi yangilari bilan sinxronlash uchun...")
+    cursor.execute("DELETE FROM costumes")
+    conn.commit()
+
     imported = 0
     skipped = 0
     errors = 0
