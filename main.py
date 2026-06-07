@@ -98,6 +98,20 @@ async def main():
         except Exception as e:
             logger.warning(f"Bot tavsifini o'rnatishda xatolik: {e}")
 
+        # Webhook o'rniga polling ishlayveradi, lekin Render o'chirib yubormasligi uchun portni ochamiz
+        if os.environ.get("RENDER") or os.environ.get("PORT"):
+            from aiohttp import web
+            async def handle(request):
+                return web.Response(text="Bot is running!")
+            app = web.Application()
+            app.router.add_get('/', handle)
+            runner = web.AppRunner(app)
+            await runner.setup()
+            port = int(os.environ.get("PORT", 8080))
+            site = web.TCPSite(runner, '0.0.0.0', port)
+            await site.start()
+            logger.info(f"Render dummy web server started on port {port}")
+
         # Eski update larni o'tkazib yuborish
         await bot.delete_webhook(drop_pending_updates=True)
         # Polling boshlash
