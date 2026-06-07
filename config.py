@@ -28,13 +28,7 @@ ADMIN_IDS: list[int] = [
 ]
 
 # Ma'lumotlar bazasi fayl yo'li
-# Render persistent disk uchun /var/data ishlatiladi, bo'lmasa local costume_bot.db
-DB_PATH: str = os.getenv("DB_PATH", "")
-if not DB_PATH:
-    if os.path.exists("/var/data") or os.environ.get("RENDER"):
-        DB_PATH = "/var/data/costume_bot.db"
-    else:
-        DB_PATH = "costume_bot.db"
+DB_PATH: str = os.getenv("DB_PATH", "costume_bot.db")
 
 # Admin kontakt (klient uchun ko'rsatiladi)
 ADMIN_CONTACT: str = os.getenv("ADMIN_CONTACT", "@admin")

@@ -3,10 +3,10 @@
 *.session
 *.session-journal
 
-# Ma'lumotlar bazasi — Railway da alohida saqlanadi
-*.db
-*.db-shm
-*.db-wal
+# Ma'lumotlar bazasi - GitHub orqali sinxronlash uchun olib tashlandi
+# *.db
+# *.db-shm
+# *.db-wal
 
 # Python cache
 __pycache__/
