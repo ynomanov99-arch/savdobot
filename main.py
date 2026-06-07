@@ -44,7 +44,7 @@ async def main():
 
     # PythonAnywhere proksi sozlash (bepul rejada kerak)
     session = None
-    if "PYTHONANYWHERE_DOMAIN" in os.environ or os.path.exists("/home/ynomanov"):
+    if "PYTHONANYWHERE_DOMAIN" in os.environ or os.path.exists("/home/ynomanov123"):
         proxy_url = "http://proxy.server:3128"
         session = AiohttpSession(proxy=proxy_url)
         logger.info(f"PythonAnywhere aniqlandi, proksi ishlatilmoqda: {proxy_url}")
