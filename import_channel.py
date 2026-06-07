@@ -14,7 +14,7 @@ from telethon import TelegramClient
 API_ID = 35764432
 API_HASH = "ae2803ec984ed28f4d5bd3befcf0b5c1"
 CHANNEL = -1002603849125  # Kanalingiz ID si
-DB_PATH = "C:\\Users\\lenovo\\Desktop\\cod uchun\\savdobot\\costume_bot.db"
+DB_PATH = "costume_bot.db"
 # ==================
 
 client = TelegramClient("saco_session", API_ID, API_HASH)
